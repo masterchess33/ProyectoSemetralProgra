@@ -295,6 +295,7 @@ public class Menu {
             System.out.println(b.get(n).verAtrazos());
             System.out.println("Sus salidas anticipadas:");
             System.out.println(b.get(n).verSalidasA());
+            
         } catch (IndexOutOfBoundsException e) {
             System.out.println("El empleado seleccionado no esta en la lista");
         }
