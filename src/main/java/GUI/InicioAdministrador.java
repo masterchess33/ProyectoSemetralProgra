@@ -83,12 +83,16 @@ public class InicioAdministrador extends javax.swing.JFrame {
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         VentanaPrincipal n=new VentanaPrincipal();
+        n.setLocationRelativeTo(null);
         n.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
 
     private void crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaActionPerformed
-        // TODO add your handling code here:
+        CrearCuentaA n=new CrearCuentaA();
+        n.setLocationRelativeTo(null);
+        n.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_crearCuentaActionPerformed
 
     private void inicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioSesionActionPerformed

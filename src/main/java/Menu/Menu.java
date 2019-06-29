@@ -33,7 +33,7 @@ public class Menu {
 
             }
         }
-    }
+    } //hecho.
 
     private static int recibirValidarNumero() {
         int num = 0;

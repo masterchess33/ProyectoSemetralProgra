@@ -77,6 +77,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void administrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administrarActionPerformed
         InicioAdministrador n= new InicioAdministrador();
+        n.setLocationRelativeTo(null);
         n.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_administrarActionPerformed
@@ -111,7 +112,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                VentanaPrincipal n= new VentanaPrincipal();
+                        n.setLocationRelativeTo(null);
+                        n.setVisible(true);
             }
         });
     }
