@@ -88,7 +88,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="atras">
       <Properties>
-        <Property name="text" type="java.lang.String" value="atras"/>
+        <Property name="text" type="java.lang.String" value="atr&#xe1;s"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasActionPerformed"/>

@@ -5,8 +5,8 @@
  */
 package datos;
 
-import Objetos.Administrador;
-import Objetos.Trabajador;
+import Contexto_problema.Administrador;
+import Contexto_problema.Trabajador;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -22,7 +22,7 @@ public class Archivos {
     public static void guardarE(ArrayList<Trabajador> n){
         try{
         ObjectOutputStream escribiendoFichero = new ObjectOutputStream( 
-            new FileOutputStream("Empleados.dat") );
+            new FileOutputStream("Empleados.ser") );
             escribiendoFichero.writeObject(n);
             escribiendoFichero.close();
         }catch(Exception e){
@@ -34,7 +34,7 @@ public class Archivos {
     ArrayList<Trabajador> resultado=new ArrayList();
     try{
     ObjectInputStream leyendoFichero = new ObjectInputStream( 
-            new FileInputStream("Empleados.dat") );
+            new FileInputStream("Empleados.ser") );
             resultado = ( ArrayList <Trabajador> )leyendoFichero.readObject();
             leyendoFichero.close();
     }catch(Exception e){
@@ -46,11 +46,12 @@ public class Archivos {
     public static void guardarA(ArrayList<Administrador> n){
         try{
         ObjectOutputStream escribiendoFichero = new ObjectOutputStream( 
-            new FileOutputStream("Administradores.dat") );
+            new FileOutputStream("Administradores.ser") );
             escribiendoFichero.writeObject(n);
             escribiendoFichero.close();
         }catch(Exception e){
             System.out.println("Error en guardado de archivo");
+            e.printStackTrace();
         }
     }
     
@@ -58,7 +59,7 @@ public class Archivos {
     ArrayList<Administrador> resultado=new ArrayList();
     try{
     ObjectInputStream leyendoFichero = new ObjectInputStream( 
-            new FileInputStream("Administradores.dat") );
+            new FileInputStream("Administradores.ser") );
             resultado = ( ArrayList <Administrador> )leyendoFichero.readObject();
             leyendoFichero.close();
     }catch(Exception e){

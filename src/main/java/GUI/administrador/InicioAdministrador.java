@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.administrador;
+
+import GUI.Launcher;
 
 /**
  *
@@ -82,7 +84,7 @@ public class InicioAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        VentanaPrincipal n=new VentanaPrincipal();
+        Launcher n=new Launcher();
         n.setLocationRelativeTo(null);
         n.setVisible(true);
         this.dispose();
@@ -96,7 +98,10 @@ public class InicioAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_crearCuentaActionPerformed
 
     private void inicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioSesionActionPerformed
-        // TODO add your handling code here:
+        InicioSesion n=new InicioSesion();
+        n.setLocationRelativeTo(null);
+        n.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_inicioSesionActionPerformed
 
     /**

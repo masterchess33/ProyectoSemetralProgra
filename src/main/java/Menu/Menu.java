@@ -1,7 +1,7 @@
 package Menu;
 
-import Objetos.Administrador;
-import Objetos.Trabajador;
+import Contexto_problema.Administrador;
+import Contexto_problema.Trabajador;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;

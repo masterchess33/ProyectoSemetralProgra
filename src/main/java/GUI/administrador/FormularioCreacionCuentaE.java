@@ -3,18 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package GUI.administrador;
+
+import GUI.administrador.InicioAdministrador;
+import Contexto_problema.Administrador;
+import Contexto_problema.Trabajador;
+import datos.Coleccion;
+import datos.Archivos;
 
 /**
  *
  * @author envergador
  */
-public class FormularioCreacionCuentaA extends javax.swing.JFrame {
+public class FormularioCreacionCuentaE extends javax.swing.JFrame {
 
     /**
      * Creates new form FormularioCreacionCuenta
      */
-    public FormularioCreacionCuentaA() {
+    public FormularioCreacionCuentaE() {
         initComponents();
     }
 
@@ -56,7 +62,7 @@ public class FormularioCreacionCuentaA extends javax.swing.JFrame {
             }
         });
 
-        atras.setText("atras");
+        atras.setText("atrás");
         atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atrasActionPerformed(evt);
@@ -127,12 +133,20 @@ public class FormularioCreacionCuentaA extends javax.swing.JFrame {
         }else if(jTextField2.getText().equals("")){
             mensaje.setText("nombre y contraseña son campos requeridos");
         }else{
+            String nombre=jTextField1.getText();
+            String contra=jTextField2.getText();
+            Trabajador n=new Trabajador(nombre, contra);
+            Coleccion.agregarEmpleado(n);
             
+            InicioAdministrador j=new InicioAdministrador();
+            j.setLocationRelativeTo(null);
+            j.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_crearActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        CrearCuentaA n=new CrearCuentaA();
+        MenuAdministrador n=new MenuAdministrador();
         n.setLocationRelativeTo(null);
         n.setVisible(true);
         this.dispose();
@@ -155,21 +169,23 @@ public class FormularioCreacionCuentaA extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioCreacionCuentaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCreacionCuentaE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioCreacionCuentaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCreacionCuentaE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioCreacionCuentaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCreacionCuentaE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioCreacionCuentaA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCreacionCuentaE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioCreacionCuentaA().setVisible(true);
+                new FormularioCreacionCuentaE().setVisible(true);
                 jTextField1.setText("");
                 jTextField2.setText("");
             }

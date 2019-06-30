@@ -1,4 +1,4 @@
-package Objetos;
+package Contexto_problema;
 
 public class Cuenta {
     

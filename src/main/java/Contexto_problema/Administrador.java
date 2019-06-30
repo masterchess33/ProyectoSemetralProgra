@@ -1,6 +1,8 @@
-package Objetos;
+package Contexto_problema;
 
-public class Administrador extends Cuenta {
+import java.io.Serializable;
+
+public class Administrador extends Cuenta implements Serializable {
     
     public Administrador(String NombreCuenta,String Contraseña){
             this.nombreCuenta=NombreCuenta;
