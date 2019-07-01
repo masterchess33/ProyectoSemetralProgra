@@ -1,3 +1,8 @@
+/*  
+ * Esta clase contiene los metodos de menu que se despliegan en las ventanas del programa
+ * @author: Pablo Lüer- Matias Vega- Sebastian Sanchez
+ * @version: 30/6/2019/
+ */
 package Menu;
 
 import datos.Archivos;
@@ -9,10 +14,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-
+ //Atributos de la clase Menu
     private static ArrayList<Administrador> adm = new ArrayList();
     private static ArrayList<Trabajador> trab = new ArrayList();
 
+    /**
+     * Método que tiene el menu del programa 
+     */
     public void inicio() {
         Archivos n=new Archivos();
         n.leerA();
@@ -23,6 +31,10 @@ public class Menu {
         
     } //hecho.
 
+    /**
+     * Método que valida el numero ingresado por teclado
+     * @return el número validado
+     */
     private static int recibirValidarNumero() {
         int num = 0;
         boolean estado = true;
@@ -44,6 +56,9 @@ public class Menu {
         return num;
     }
 
+     /**
+     * Método que despliega un menu para el administrador
+     */
     private void menuAdministrador() {
         boolean estado = true;
         while (estado) {
@@ -76,6 +91,10 @@ public class Menu {
 
     }
 
+    /**
+     * Método que crea la cuenta de tipo Administrador
+     * @param m ArrayList de Tipo administrador donde se guarda la cuenta
+     */
     private void crearCuentaA(ArrayList<Administrador> m) {
         String n = "1234";
         System.out.println("Ingrese la contraseña de super administrador");
@@ -92,7 +111,11 @@ public class Menu {
             System.out.println("contraseña incorrecta");
         }
     }
-
+    
+    /**
+     * Método que valida el caracter ingresado por teclado
+     * @return el caractér ingresado validado
+     */
     private static String recibirPalabra() {
         String num = " ";
         boolean estado = true;
@@ -113,7 +136,10 @@ public class Menu {
         }
         return num;
     }
-
+    
+     /**
+     * Método que despliega un menu para los trabajadores
+     */
     private void menuEmpleado() {
         boolean estado = true;
         while (estado) {
@@ -140,7 +166,14 @@ public class Menu {
             }
         }
     }
-
+    
+    /**
+     * Método que comprueba si el nombre de usuario y la contraseña de la cuenta Trabajador son correctas 
+     * @param nombre nombre de la cuenta
+     * @param contra contraseña de la cuenta
+     * @param m ArrayList de tipo trabajador donde se encuentra la cuenta
+     * @return la posicion de la cuenta
+     */
     private static int comprobarUsuarioConT(String nombre, String contra, ArrayList<Trabajador> m) {
         int posicion = -1;
         try{
@@ -162,6 +195,13 @@ public class Menu {
 
     }
 
+    /**
+     * Método que comprueba si el nombre de usuario y la contraseña de la cuenta administrador son correctas
+     * @param nombre nombre de la cuenta
+     * @param contra  contraseña de la cuenta
+     * @param m ArrayList de tipo administrador donde se encuentra la cuenta 
+     * @return posicion de la cuenta
+     */
     private static int comprobarUsuarioConA(String nombre, String contra, ArrayList<Administrador> m) {
         int posicion = -1;
         try{
@@ -181,7 +221,12 @@ public class Menu {
         }
         return posicion;
     }
-
+    
+    /**
+     * Método que registra la hora de entrada y salida de los trabajadores
+     * @param n parametro de opcion para elegir accion del menu desplegado
+     * @param a ArrayList de tipo trabajador donde se encuentra las cuentas
+     */
     private void menuRegistroES(int n, ArrayList<Trabajador> a) {
         boolean estado = true;
         while (estado) {
@@ -205,6 +250,11 @@ public class Menu {
 
     }
 
+    /**
+     * Método que tiene el menu de la cuenta Administrador
+     * @param n parametro de opcion para elegir accion del menu desplegado
+     * @param m ArrayList de tipo administrador donde se encuentra las cuentas
+     */
     private void menuAdministracion(int n, ArrayList<Administrador> m) {
         boolean estado = true;
         while (estado) {
@@ -243,6 +293,11 @@ public class Menu {
         }
     }
 
+    /**
+     * Método que tiene el menu para hacer un cambio en la cuenta Administrador
+     * @param n parametro de opcion para elegir accion del menu desplegado
+     * @param m ArrayList de tipo administrador donde se encuentra las cuentas
+     */
     private void administrarCuentaA(int n, ArrayList<Administrador> m) {
         System.out.println("¿que desea cambiar?");
         System.out.println("1. Cambiar nombre de la cuenta");
@@ -265,6 +320,10 @@ public class Menu {
 
     }
 
+    /**
+     * Método para crear una cuenta tipo Trabajador
+     * @param b ArrayList donde se guarda la cuenta con sus datos
+     */
     private void crearCuentaEmpleado(ArrayList<Trabajador> b) {
         System.out.println("Ingrese el nombre de la nueva cuenta");
         String nombre = recibirPalabra();
@@ -274,6 +333,10 @@ public class Menu {
         b.add(t);
     }
 
+    /**
+     * Método para mostrar el registro de atrasos y salidas anticipadas de la cuenta de tipo trabajador a eleccion
+     * @param b ArrayList donde se guarda la cuenta
+     */
     private void verRegistros(ArrayList<Trabajador> b) {
         verEmpleados(b);
         System.out.println("¿De que empleado desea ver el registro? (ingrese su numero)");
@@ -289,6 +352,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Método contiene un menu para administrar cuentas de tipo Trabajador
+     * @param b ArrayList del tipo de cuenta a administrar
+     */
     private void administrarCuentaE(ArrayList<Trabajador> b) {
         verEmpleados(b);
         System.out.println("¿Que cuenta de empleado desea administrar? (ingrese su numero)");
@@ -318,6 +385,11 @@ public class Menu {
         }
     }
 
+    /**
+     * Método que establece la hora de entrada y salida para los trabajadores
+     * @param n parametro utilizado para ingresar la hora y minutos
+     * @param b ArrayList del tipo de cuenta a administrar
+     */
     private void establecerH(int n, ArrayList<Administrador> b) {
         System.out.println("Ingrese el horario de entrada");
         System.out.println("La hora");
@@ -333,12 +405,20 @@ public class Menu {
         b.get(n).establecerHoraSalida(hs, ms);
     }
 
+    /**
+     * Método que muestra los Trabajores con su nombre de cuenta
+     * @param m ArrayList de tipo Trabajador a mostrar
+     */
     private void verEmpleados(ArrayList<Trabajador> m) {
         for (int i = 0; i < m.size(); i++) {
             System.out.println(i + ". " + m.get(i).getNombreCuenta());
         }
     }
 
+    /**
+     * Método que elimina una cuenta de tipo Trabajador
+     * @param b ArrayList de tipo Trabajador en el cual se encuentra la cuenta a eliminar 
+     */
     private void eliminarCuentaE(ArrayList<Trabajador> b) {
         verEmpleados(b);
         System.out.println("Ingrese el numero de cuenta que desea eliminar");

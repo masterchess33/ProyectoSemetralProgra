@@ -116,15 +116,11 @@ public class InicioSesion extends javax.swing.JFrame {
             
             
             for (int i = 0; i < Coleccion.getAdm().size(); i++) {
-            if (!Objects.equals(nombre, Coleccion.getAdm().get(i).getNombreCuenta())) {
-                System.out.println("nombre incorrecto");
-            }else{
+            if (Objects.equals(nombre, Coleccion.getAdm().get(i).getNombreCuenta())) {
                 if (Coleccion.getAdm().get(i).getContrasenia().equals(contra)) {
                     System.out.println("Sesion iniciada");
                     posicion = i;
                     break;
-                }else{
-                    System.out.println("contraseña incorrecta ");
                 }
             }
         }
