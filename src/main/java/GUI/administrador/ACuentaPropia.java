@@ -5,6 +5,7 @@
  */
 package GUI.administrador;
 
+import datos.Archivos;
 import datos.Coleccion;
 
 /**
@@ -138,6 +139,8 @@ public class ACuentaPropia extends javax.swing.JFrame {
         }else{
             try{
             Coleccion.getAdm().get(numero).setNombreCuenta(nombre);
+            Archivos k=new Archivos();
+            k.guardarA();
             jTextArea1.setText("Cambio realizado con exito");
             }catch(IndexOutOfBoundsException e){
             jTextArea1.setText("Error");
@@ -153,6 +156,8 @@ public class ACuentaPropia extends javax.swing.JFrame {
         }else{
             try{
             Coleccion.getAdm().get(numero).setNombreCuenta(nombre);
+            Archivos k=new Archivos();
+            k.guardarA();
             jTextArea1.setText("Cambio realizado con exito");
             }catch(IndexOutOfBoundsException e){
             jTextArea1.setText("Error");

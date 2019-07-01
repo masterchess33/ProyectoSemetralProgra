@@ -5,6 +5,7 @@
  */
 package GUI.trabajador;
 
+import datos.Archivos;
 import datos.Coleccion;
 
 /**
@@ -121,6 +122,8 @@ public class MenuEmpleado extends javax.swing.JFrame {
 
     private void estradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estradaActionPerformed
         Coleccion.getTrab().get(numeroCuenta).registrarEntrada();
+        Archivos j= new Archivos();
+        j.guardarE();
         InicioSesionE n=new InicioSesionE();
         n.setLocationRelativeTo(null);
         n.setVisible(true);
@@ -129,6 +132,8 @@ public class MenuEmpleado extends javax.swing.JFrame {
 
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
         Coleccion.getTrab().get(numeroCuenta).registrarSalida();
+        Archivos j= new Archivos();
+        j.guardarE();
         InicioSesionE n=new InicioSesionE();
         n.setLocationRelativeTo(null);
         n.setVisible(true);

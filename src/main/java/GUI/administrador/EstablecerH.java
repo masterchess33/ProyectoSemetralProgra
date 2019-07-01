@@ -5,7 +5,9 @@
  */
 package GUI.administrador;
 
+import datos.Archivos;
 import datos.Coleccion;
+import problema.Administrador;
 
 /**
  *
@@ -168,8 +170,11 @@ public class EstablecerH extends javax.swing.JFrame {
             int minEntrada=Integer.parseInt(minE.getText());
             int horaSalida=Integer.parseInt(horaS.getText());
             int minSalida=Integer.parseInt(minS.getText());
-            Coleccion.getAdm().get(numero).establecerHoraEntrada(horaEntrada, minEntrada);
-            Coleccion.getAdm().get(numero).establecerHoraSalida(horaSalida, minSalida);
+            Administrador.establecerHoraEntrada(horaEntrada, minEntrada);
+            Administrador.establecerHoraSalida(horaSalida, minSalida);
+            Archivos k=new Archivos();
+            k.guardarA();
+            k.guardarE();
             MenuAdministrador n=new MenuAdministrador();
             n.setLocationRelativeTo(null);
             n.setVisible(true);

@@ -7,6 +7,7 @@ package GUI.trabajador;
 
 import GUI.Launcher;
 import GUI.administrador.MenuAdministrador;
+import datos.Archivos;
 import datos.Coleccion;
 
 /**
@@ -122,6 +123,9 @@ public class InicioSesionE extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void iniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionActionPerformed
+        Archivos j= new Archivos();
+        j.leerE();
+        
         int posicion = -1;
         String nombre=jTextField1.getText();
         String contra=jTextField2.getText();

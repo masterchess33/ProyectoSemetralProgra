@@ -127,7 +127,8 @@ public class FormularioCreacionCuentaE extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
-        
+        Archivos k=new Archivos();
+        k.leerE();
         if(jTextField1.getText().equals("")){
            mensaje.setText("nombre y contraseña son campos requeridos");
         }else if(jTextField2.getText().equals("")){
@@ -137,7 +138,7 @@ public class FormularioCreacionCuentaE extends javax.swing.JFrame {
             String contra=jTextField2.getText();
             Trabajador n=new Trabajador(nombre, contra);
             Coleccion.agregarEmpleado(n);
-            
+            k.guardarE();
             InicioAdministrador j=new InicioAdministrador();
             j.setLocationRelativeTo(null);
             j.setVisible(true);

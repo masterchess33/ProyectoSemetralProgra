@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package GUI.administrador;
+import datos.Archivos;
 import datos.Coleccion;
 /**
  *
@@ -213,6 +214,8 @@ public class AdministrarCuenta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                Archivos k=new Archivos();
+                k.leerE();
                 jTextArea1.setText(Coleccion.mostrarEmpleados());
                 jTextField2.setText("");
                 jTextField3.setText("");

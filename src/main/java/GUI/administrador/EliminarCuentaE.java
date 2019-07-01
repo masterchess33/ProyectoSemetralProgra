@@ -5,6 +5,7 @@
  */
 package GUI.administrador;
 
+import datos.Archivos;
 import datos.Coleccion;
 
 /**
@@ -114,6 +115,8 @@ public class EliminarCuentaE extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        Archivos k=new Archivos();
+        k.leerE();
         if(jTextField1.getText().equals("")){
             jTextArea1.setText("Nombre cuenta y contraseña cuenta son campos requeridos");
         }else if(jTextField2.getText().equals("")){
@@ -133,6 +136,8 @@ public class EliminarCuentaE extends javax.swing.JFrame {
             jTextArea1.setText("usuario o contraseña incorrecta");
         }else{
             Coleccion.getTrab().remove(posicion);
+            
+            k.guardarE();
         }
         
         }catch(IndexOutOfBoundsException e){

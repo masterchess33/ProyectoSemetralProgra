@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package GUI.administrador;
+import datos.Archivos;
 import datos.Coleccion;
 /**
  *
@@ -95,6 +96,8 @@ public class VerRegistro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+        Archivos k=new Archivos();
+        k.leerE();
         if(jTextField1.getText().equals("")){
            jTextArea1.setText("Debe ingresar un numero de cuenta");
         }else{
