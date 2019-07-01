@@ -1,12 +1,10 @@
-package Contexto_problema;
+package problema;
 
-import java.io.Serializable;
-
-public class Administrador extends Cuenta implements Serializable {
+public class Administrador extends Cuenta {
     
     public Administrador(String NombreCuenta,String Contraseña){
             this.nombreCuenta=NombreCuenta;
-            this.contraseña=Contraseña;
+            this.contrasenia=Contraseña;
     }
     
     public int verAtrazos(Trabajador n){
@@ -61,15 +59,15 @@ public class Administrador extends Cuenta implements Serializable {
         this.nombreCuenta=nombre;
     }
     public void setContraseña(String contra){
-        this.contraseña=contra;
+        this.contrasenia=contra;
     }
 
     public String getNombreCuenta() {
-        return nombreCuenta;
+        return this.nombreCuenta;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return this.contrasenia;
     }
     
 }

@@ -1,7 +1,9 @@
 package Menu;
 
-import Contexto_problema.Administrador;
-import Contexto_problema.Trabajador;
+import datos.Archivos;
+import datos.Coleccion;
+import problema.Administrador;
+import problema.Trabajador;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -12,27 +14,13 @@ public class Menu {
     private static ArrayList<Trabajador> trab = new ArrayList();
 
     public void inicio() {
-        boolean estado = true;
-        while (estado) {
-            System.out.println("Inicio de sesión");
-            System.out.println("1. Administrador");
-            System.out.println("2. Empleado");
-            System.out.println("3. Salir");
-            int opcion = recibirValidarNumero();
-            switch (opcion) {
-                case 1:
-                    menuAdministrador();
-                    break;
-                case 2:
-                    menuEmpleado();
-                    break;
-
-                case 3:
-                    estado = false;
-                    break;
-
-            }
+        Archivos n=new Archivos();
+        n.leerA();
+        ArrayList<Administrador> j=Coleccion.getAdm();
+        for(int i=0;i<j.size();i++){
+            System.out.println("Nombre: "+Coleccion.getAdm().get(i).getNombreCuenta());
         }
+        
     } //hecho.
 
     private static int recibirValidarNumero() {
@@ -158,7 +146,7 @@ public class Menu {
         try{
         for (int i = 0; i < m.size(); i++) {
             if (nombre.equals(m.get(i).getNombreCuenta())) {
-                if (contra.equals(m.get(i).getContraseña())) {
+                if (contra.equals(m.get(i).getContrasenia())) {
                     System.out.println("Sesion iniciada");
                     posicion = i;
                 }
@@ -179,7 +167,7 @@ public class Menu {
         try{
         for (int i = 0; i < m.size(); i++) {
             if (nombre.equals(m.get(i).getNombreCuenta())) {
-                if (contra.equals(m.get(i).getContraseña())) {
+                if (contra.equals(m.get(i).getContrasenia())) {
                     System.out.println("Sesion iniciada");
                     posicion = i;
                 }
@@ -320,7 +308,7 @@ public class Menu {
                 case 2:
                     System.out.println("Ingrese nueva contraseña");
                     String contra = recibirPalabra();
-                    b.get(n).setContraseña(contra);
+                    b.get(n).setContrasenia(contra);
                     break;
                 case 3:
                     break;

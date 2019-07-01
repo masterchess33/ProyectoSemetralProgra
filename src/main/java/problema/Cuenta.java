@@ -1,10 +1,10 @@
-package Contexto_problema;
+package problema;
 
 public class Cuenta {
     
     
     protected String nombreCuenta;
-    protected String contraseña;
+    protected String contrasenia;
     protected static int horaEntrada=0;
     protected static int minutosEntrada=0;
     protected static int horaSalida=0;

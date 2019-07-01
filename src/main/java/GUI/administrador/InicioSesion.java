@@ -8,6 +8,7 @@ package GUI.administrador;
 import datos.Archivos;
 import datos.Coleccion;
 import java.util.Arrays;
+import java.util.Objects;
 /**
  *
  * @author envergador
@@ -33,9 +34,9 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         nombreI = new javax.swing.JTextField();
-        contrasenia = new javax.swing.JPasswordField();
         inicioSesion = new javax.swing.JButton();
         atras = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,11 +68,10 @@ public class InicioSesion extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inicioSesion)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(nombreI)
-                        .addComponent(contrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)))
+                    .addComponent(nombreI, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
                 .addContainerGap(117, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -88,7 +88,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(inicioSesion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
@@ -107,17 +107,24 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void inicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioSesionActionPerformed
-        
+        Archivos j=new Archivos();
+        j.leerA();
         int posicion = -1;
         String nombre=nombreI.getText();
-        String contra=contrasenia.getText();
+        String contra=jTextField1.getText();
         try{
-        for (int i = 0; i < Coleccion.getAdm().size(); i++) {
-            if (nombre.equals(Coleccion.getAdm().get(i).getNombreCuenta())) {
-                if (Coleccion.getAdm().get(i).getContraseña().equals(contra)) {
+            
+            
+            for (int i = 0; i < Coleccion.getAdm().size(); i++) {
+            if (!Objects.equals(nombre, Coleccion.getAdm().get(i).getNombreCuenta())) {
+                System.out.println("nombre incorrecto");
+            }else{
+                if (Coleccion.getAdm().get(i).getContrasenia().equals(contra)) {
                     System.out.println("Sesion iniciada");
                     posicion = i;
                     break;
+                }else{
+                    System.out.println("contraseña incorrecta ");
                 }
             }
         }
@@ -172,10 +179,10 @@ public class InicioSesion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atras;
-    private javax.swing.JPasswordField contrasenia;
     private javax.swing.JButton inicioSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nombreI;
     // End of variables declaration//GEN-END:variables
 }

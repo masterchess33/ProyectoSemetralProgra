@@ -30,12 +30,10 @@
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="inicioSesion" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="nombreI" max="32767" attributes="0"/>
-                      <Component id="contrasenia" pref="147" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="nombreI" pref="147" max="32767" attributes="0"/>
+                  <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="117" max="32767" attributes="0"/>
           </Group>
@@ -57,7 +55,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="contrasenia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="inicioSesion" min="-2" max="-2" attributes="0"/>
@@ -81,8 +79,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="nombreI">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="contrasenia">
-    </Component>
     <Component class="javax.swing.JButton" name="inicioSesion">
       <Properties>
         <Property name="text" type="java.lang.String" value="iniciar sesi&#xf3;n"/>
@@ -98,6 +94,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField1">
     </Component>
   </SubComponents>
 </Form>

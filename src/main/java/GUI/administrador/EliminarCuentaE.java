@@ -123,7 +123,7 @@ public class EliminarCuentaE extends javax.swing.JFrame {
         try{
         for (int i = 0; i < Coleccion.getTrab().size(); i++) {
             if (jTextField1.getText().equals(Coleccion.getTrab().get(i).getNombreCuenta())) {
-                if (jTextField2.getText().equals(Coleccion.getTrab().get(i).getContraseña())) {
+                if (jTextField2.getText().equals(Coleccion.getTrab().get(i).getContrasenia())) {
                     
                     posicion = i;
                 }

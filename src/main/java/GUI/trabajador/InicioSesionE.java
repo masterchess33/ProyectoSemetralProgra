@@ -128,7 +128,7 @@ public class InicioSesionE extends javax.swing.JFrame {
         try{
         for (int i = 0; i < Coleccion.getTrab().size(); i++) {
             if (nombre.equals(Coleccion.getTrab().get(i).getNombreCuenta())) {
-                if (Coleccion.getTrab().get(i).getContraseña().equals(contra)) {
+                if (Coleccion.getTrab().get(i).getContrasenia().equals(contra)) {
                     
                     posicion = i;
                     break;

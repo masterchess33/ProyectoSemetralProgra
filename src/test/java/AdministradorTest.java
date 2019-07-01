@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Contexto_problema.Administrador;
-import Contexto_problema.Cuenta;
+import problema.Administrador;
+import problema.Cuenta;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

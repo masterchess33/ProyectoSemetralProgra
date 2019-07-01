@@ -5,8 +5,8 @@
  */
 package datos;
 
-import Contexto_problema.Administrador;
-import Contexto_problema.Trabajador;
+import problema.Administrador;
+import problema.Trabajador;
 import java.util.ArrayList;
 
 /**

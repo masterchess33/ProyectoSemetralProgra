@@ -6,8 +6,8 @@
 package GUI.administrador;
 
 import GUI.administrador.InicioAdministrador;
-import Contexto_problema.Administrador;
-import Contexto_problema.Trabajador;
+import problema.Administrador;
+import problema.Trabajador;
 import datos.Coleccion;
 import datos.Archivos;
 

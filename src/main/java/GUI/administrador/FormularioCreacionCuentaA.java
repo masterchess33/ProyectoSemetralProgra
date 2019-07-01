@@ -6,7 +6,7 @@
 package GUI.administrador;
 
 import GUI.administrador.InicioAdministrador;
-import Contexto_problema.Administrador;
+import problema.Administrador;
 import datos.Coleccion;
 import datos.Archivos;
 
@@ -126,7 +126,8 @@ public class FormularioCreacionCuentaA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
-        
+        Archivos k=new Archivos();
+        k.leerA();
         if(jTextField1.getText().equals("")){
            mensaje.setText("nombre y contraseña son campos requeridos");
         }else if(jTextField2.getText().equals("")){
@@ -136,7 +137,7 @@ public class FormularioCreacionCuentaA extends javax.swing.JFrame {
             String contra=jTextField2.getText();
             Administrador n=new Administrador(nombre,contra);
             Coleccion.agregarAdministrador(n);
-            
+            k.guardarA();
             InicioAdministrador j=new InicioAdministrador();
             j.setLocationRelativeTo(null);
             j.setVisible(true);

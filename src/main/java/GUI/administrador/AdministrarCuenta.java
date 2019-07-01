@@ -168,7 +168,7 @@ public class AdministrarCuenta extends javax.swing.JFrame {
            jTextArea2.setText("Contraseña es un campo requerido");
         }else{
             try{
-            Coleccion.getTrab().get(numero).setContraseña(contrasenia);
+            Coleccion.getTrab().get(numero).setContrasenia(contrasenia);
             jTextArea2.setText("Cambio realizado con exito");
             }catch(IndexOutOfBoundsException e){
             jTextArea2.setText("No hay trabajadores que se puedan modificar");

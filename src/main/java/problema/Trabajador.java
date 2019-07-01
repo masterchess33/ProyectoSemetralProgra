@@ -1,19 +1,25 @@
-package Contexto_problema;
+package problema;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Trabajador extends Cuenta implements Serializable {
+public class Trabajador extends Cuenta  {
 
     
-    private int atrazos;
+    private int atrasos;
     private int salidaAnticipada;
 
-    public Trabajador(String nombre, String contraseña) {
-        this.nombreCuenta = nombre;
-        this.contraseña = contraseña;
-        atrazos=0;
-        salidaAnticipada=0;
+    public Trabajador(String Nombre, String Contrasenia) {
+        this.nombreCuenta = Nombre;
+        this.contrasenia = Contrasenia;
+        this.atrasos=0;
+        this.salidaAnticipada=0;
+    }
+    
+    public Trabajador(String Nombre, String Contrasenia, int Atrasos, int SalidasA){
+        this.nombreCuenta=Nombre;
+        this.contrasenia=Contrasenia;
+        this.atrasos=Atrasos;
+        this.salidaAnticipada=SalidasA;
     }
 
     public void registrarEntrada() {
@@ -41,7 +47,7 @@ public class Trabajador extends Cuenta implements Serializable {
     }
 
     public int verAtrazos() {
-        return atrazos;
+        return atrasos;
     }
     
     public int verSalidasA() {
@@ -49,7 +55,7 @@ public class Trabajador extends Cuenta implements Serializable {
     }
 
     private void atrazo() {
-        atrazos = atrazos + 1;
+        atrasos = atrasos + 1;
     }
     private void salidaA() {
         salidaAnticipada = salidaAnticipada + 1;
@@ -57,19 +63,26 @@ public class Trabajador extends Cuenta implements Serializable {
     public String getNombreCuenta() {
         return this.nombreCuenta;
     }
-
-    public String getContraseña() {
-        return this.contraseña;
-    }
-
+    
     public void setNombreCuenta(String nombreCuenta) {
         this.nombreCuenta = nombreCuenta;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setAtrasos(int atrasos) {
+        this.atrasos = atrasos;
+    }
+
+    public void setSalidaAnticipada(int salidaAnticipada) {
+        this.salidaAnticipada = salidaAnticipada;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
     
     
-
 }
