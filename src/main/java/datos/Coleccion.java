@@ -10,10 +10,7 @@ import problema.Administrador;
 import problema.Trabajador;
 import java.util.ArrayList;
 
-/**
- *
- * @author envergador
- */
+
 public class Coleccion {
     
     //atributos de la clase coleccion
