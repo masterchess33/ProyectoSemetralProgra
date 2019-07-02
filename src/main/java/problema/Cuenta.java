@@ -14,6 +14,22 @@ public class Cuenta {
     protected static int minutosEntrada=0;
     protected static int horaSalida=0;
     protected static int minutosSalida=0;
+
+    public static int getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    public static int getMinutosEntrada() {
+        return minutosEntrada;
+    }
+
+    public static int getHoraSalida() {
+        return horaSalida;
+    }
+
+    public static int getMinutosSalida() {
+        return minutosSalida;
+    }
     
     
     

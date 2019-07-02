@@ -7,6 +7,7 @@ package GUI;
 
 import GUI.administrador.InicioAdministrador;
 import GUI.trabajador.InicioSesionE;
+import datos.Archivos;
 
 /**
  *
@@ -119,6 +120,8 @@ public class Launcher extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Launcher n= new Launcher();
+                        Archivos j=new Archivos();
+                        j.leerhoraES();
                         n.setLocationRelativeTo(null);
                         n.setVisible(true);
             }

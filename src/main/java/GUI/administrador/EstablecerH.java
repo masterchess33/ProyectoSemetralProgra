@@ -156,6 +156,7 @@ public class EstablecerH extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void establecerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_establecerActionPerformed
+        Archivos k=new Archivos();
         if(horaE.getText().equals("")){
             jTextArea1.setText("Error,campos requeridos vacios");
         }else if(minE.getText().equals("")){
@@ -172,7 +173,7 @@ public class EstablecerH extends javax.swing.JFrame {
             int minSalida=Integer.parseInt(minS.getText());
             Administrador.establecerHoraEntrada(horaEntrada, minEntrada);
             Administrador.establecerHoraSalida(horaSalida, minSalida);
-            Archivos k=new Archivos();
+            
             k.guardarA();
             k.guardarE();
             MenuAdministrador n=new MenuAdministrador();
@@ -183,6 +184,7 @@ public class EstablecerH extends javax.swing.JFrame {
                 jTextArea1.setText("Error, ingrese solo numeros validos");
             }
         }
+        k.guardarhoraES();
     }//GEN-LAST:event_establecerActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed

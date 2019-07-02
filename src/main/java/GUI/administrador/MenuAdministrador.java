@@ -35,6 +35,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         horarios = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         atras = new javax.swing.JButton();
+        verh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +88,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
 
+        verh.setText("Ver horarios de entrada y salida");
+        verh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verhActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,8 +103,10 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(eliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eliminar)
+                            .addComponent(verh))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                         .addComponent(atras))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +139,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addComponent(horarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(eliminar)
-                        .addContainerGap(7, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(verh)
+                        .addContainerGap(13, Short.MAX_VALUE))))
         );
 
         pack();
@@ -185,6 +197,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
 
+    private void verhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verhActionPerformed
+        VerHorarios n=new VerHorarios();
+        n.setLocationRelativeTo(null);
+        n.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_verhActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -237,5 +256,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton eliminar;
     private javax.swing.JButton horarios;
     private javax.swing.JButton registros;
+    private javax.swing.JButton verh;
     // End of variables declaration//GEN-END:variables
 }

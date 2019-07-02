@@ -57,10 +57,13 @@ public class Administrador extends Cuenta {
     
      /**
      * Método que muestas las horas de entrada y salida, definas por el administrador
+     * @return 
      */
-    public void verHorasEntradaSalida(){
-        System.out.println("La hora de entrada es: "+Cuenta.horaEntrada+":"+Cuenta.minutosEntrada);
-        System.out.println("La hora de salida es: "+Cuenta.horaSalida+":"+Cuenta.minutosSalida);
+    public static String verHorasEntradaSalida(){
+        String resultado="";
+        resultado="La hora de entrada es: "+Cuenta.horaEntrada+":"+Cuenta.minutosEntrada+"\n";
+        resultado=resultado+"La hora de salida es: "+Cuenta.horaSalida+":"+Cuenta.minutosSalida;
+        return resultado;
     }
    
     /**
