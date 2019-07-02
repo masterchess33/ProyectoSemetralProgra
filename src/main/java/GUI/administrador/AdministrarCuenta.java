@@ -149,7 +149,7 @@ public class AdministrarCuenta extends javax.swing.JFrame {
 
     private void cNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNombreActionPerformed
         String nombre=jTextField2.getText();
-        int numero=Integer.parseInt(jTextField1.getText());
+        int numero=Integer.parseInt(jTextField1.getText())-1;
         if(jTextField2.getText().equals("")){
            jTextArea2.setText("Nombre es un campo requerido");
         }else{

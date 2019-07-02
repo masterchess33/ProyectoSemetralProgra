@@ -37,6 +37,8 @@ public class InicioSesion extends javax.swing.JFrame {
         inicioSesion = new javax.swing.JButton();
         atras = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +60,10 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,7 +80,9 @@ public class InicioSesion extends javax.swing.JFrame {
                     .addComponent(jTextField1))
                 .addContainerGap(117, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(atras)
                 .addContainerGap())
         );
@@ -91,9 +99,15 @@ public class InicioSesion extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(inicioSesion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addComponent(atras)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addComponent(atras)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -118,14 +132,14 @@ public class InicioSesion extends javax.swing.JFrame {
             for (int i = 0; i < Coleccion.getAdm().size(); i++) {
             if (Objects.equals(nombre, Coleccion.getAdm().get(i).getNombreCuenta())) {
                 if (Coleccion.getAdm().get(i).getContrasenia().equals(contra)) {
-                    System.out.println("Sesion iniciada");
+                    jTextArea1.setText("Sesion iniciada");
                     posicion = i;
                     break;
                 }
             }
         }
         if (posicion == -1) {
-            System.out.println("usuario o contraseña incorrecta");
+            jTextArea1.setText("usuario o contraseña incorrecta");
         }else{
             MenuAdministrador n= new MenuAdministrador();
             n.setNumeroCuenta(posicion);
@@ -178,6 +192,8 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JButton inicioSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nombreI;
     // End of variables declaration//GEN-END:variables
