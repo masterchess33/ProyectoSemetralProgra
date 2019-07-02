@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase contenedora de la interfaz grafica que se despliega para administrar una cuenta de trabajador en el menu de administrador
  */
 package GUI.administrador;
 import datos.Archivos;
 import datos.Coleccion;
 /**
  *
- * @author envergador
+ * @author Pablo Lüer- Matias vega-Sebastian Sanchez
  */
 public class AdministrarCuenta extends javax.swing.JFrame {
 

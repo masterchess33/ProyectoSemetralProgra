@@ -1,13 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  Clase que despliega la interfaz grafica del menu principal de la cuenta administrado
+ *  donde se encuentran las opciones de acciones para administrador
  */
 package GUI.administrador;
 
 /**
  *
- * @author envergador
+ * @author Pablo Lüer- Matias vega-Sebastian Sanchez
  */
 public class MenuAdministrador extends javax.swing.JFrame {
 

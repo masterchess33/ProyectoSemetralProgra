@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase contenedora de la interfaz desplegada en el momento de ingresar por primera vez al inicio de sesion de administrador
  */
 package GUI.administrador;
 
@@ -12,7 +10,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author envergador
+ * @author Pablo Lüer- Matias vega-Sebastian Sanchez
  */
 public class CrearCuentaA extends javax.swing.JFrame {
 

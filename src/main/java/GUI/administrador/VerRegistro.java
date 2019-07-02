@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase donde se despliega la intefaz grafica del administrador para ver el registro de entradas y salidas de el trabajador
  */
 package GUI.administrador;
 import datos.Archivos;
 import datos.Coleccion;
 /**
  *
- * @author envergador
+ * @author Pablo Lüer- Matias vega-Sebastian Sanchez
  */
 public class VerRegistro extends javax.swing.JFrame {
 

@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase donde se despliega la interfaz grafica principal del programa
  */
 package GUI;
 
@@ -11,7 +9,7 @@ import datos.Archivos;
 
 /**
  *
- * @author envergador
+ * @author Pablo Lüer- Matias vega-Sebastian Sanchez
  */
 public class Launcher extends javax.swing.JFrame {
 
