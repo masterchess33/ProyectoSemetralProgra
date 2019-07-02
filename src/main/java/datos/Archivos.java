@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*  
+ * Esta clase contiene los metodos para leer y guardar los ArrayList de tipo Trabajador y Administrador
+ * @author: Pablo Lüer- Matias Vega- Sebastian Sanchez
+ * @version: 30/6/2019/
  */
 package datos;
 
@@ -16,12 +16,12 @@ import org.json.simple.parser.ParseException;
 import problema.Administrador;
 import problema.Trabajador;
 
-/**
- *
- * @author envergador
- */
+
 public class Archivos {
     
+    /**
+     * Método que guarda el los atributos de Trabajador en una coleccion.
+     */
     public void guardarE(){
         JSONArray ListaEmpleados = new JSONArray();
         try{
@@ -51,6 +51,9 @@ public class Archivos {
         
     }
     
+    /**
+     * Método que lee el archivo Empleados.json
+     */
     public void leerE(){
         Coleccion.getTrab().clear();
         leerArchivoE("Empleados.json");
@@ -58,6 +61,9 @@ public class Archivos {
         
     }
     
+    /**
+     * Método que guarda la informacion de cuenta de los administradores
+     */
     public void guardarA(){
         JSONArray ListaAdministradores = new JSONArray();
         try{
@@ -85,13 +91,19 @@ public class Archivos {
         }
     }
     
+    /**
+     * Método que lee el archivo Administradores.json
+     */
     public void leerA(){
         Coleccion.getAdm().clear();
         leerArchivoA("Administradores.json");
          
         
     }
-    
+    /**
+     * Método que lee el archivo que contiene los objetos de tipo administrador
+     * @param ruta parametro que indica la ruta del archivo 
+     */
     private void leerArchivoA(String ruta) {
         JSONParser parser = new JSONParser();
         JSONArray array = new JSONArray();
@@ -111,6 +123,10 @@ public class Archivos {
         
     }
     
+    /**
+     * Método que lee el archivo que contiene los objetos de tipo Trabajador
+     * @param ruta parametro que indica la ruta del archivo 
+     */
     private void leerArchivoE(String ruta) {
         JSONParser parser = new JSONParser();
         JSONArray array = new JSONArray();
@@ -131,7 +147,10 @@ public class Archivos {
     }
     
     
-    
+    /**
+     * Método que guarda la informacion contenida en el archivo json de tipo trabajador en un arreglo
+     * @param e archivo json
+     */
     private void JsonAobjetosTrabajador(JSONObject e) {
         
         JSONObject employeeObject = (JSONObject) e.get("empleados");
@@ -145,9 +164,11 @@ public class Archivos {
         Trabajador s = new Trabajador(nombre,contra,atrasosI,salidasI);
         Coleccion.agregarEmpleado(s);
     }
-    
-    
-    
+        
+    /**
+     * Método que guarda la informacion contenida en el archivo json de tipo administrador en un arreglo
+     * @param e archivo json
+     */
     private void JsonAobjetosAdministrador(JSONObject e) {
         
         JSONObject employeeObject = (JSONObject) e.get("administradores");
