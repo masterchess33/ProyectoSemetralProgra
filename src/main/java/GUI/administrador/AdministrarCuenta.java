@@ -172,7 +172,7 @@ public class AdministrarCuenta extends javax.swing.JFrame {
 
     private void cContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cContraActionPerformed
         String contrasenia=jTextField3.getText();
-        int numero=Integer.parseInt(jTextField1.getText());
+        int numero=Integer.parseInt(jTextField1.getText())-1;
         if(jTextField3.getText().equals("")){
            jTextArea2.setText("Contraseña es un campo requerido");
         }else{
