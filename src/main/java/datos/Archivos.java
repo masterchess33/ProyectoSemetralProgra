@@ -160,10 +160,10 @@ public class Archivos {
         JSONObject employeeObject = (JSONObject) e.get("empleados");
         String nombre = (String) employeeObject.get("nombreCuenta");
         String contra = (String) employeeObject.get("contrasenia");
-        String atrasos = (String) employeeObject.get("atrasos");
-        String salidas = (String) employeeObject.get("salidasA");
-        int atrasosI=Integer.parseInt(atrasos);
-        int salidasI=Integer.parseInt(salidas);
+        long atrasos = (long) employeeObject.get("atrasos");
+        long salidas = (long) employeeObject.get("salidasA");
+        int atrasosI=(int)atrasos;
+        int salidasI=(int) salidas;
         
         Trabajador s = new Trabajador(nombre,contra,atrasosI,salidasI);
         Coleccion.agregarEmpleado(s);

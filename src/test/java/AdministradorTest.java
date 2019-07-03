@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 import problema.Administrador;
-import problema.Cuenta;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
