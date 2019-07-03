@@ -156,6 +156,8 @@ public class EstablecerH extends javax.swing.JFrame {
 
     private void establecerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_establecerActionPerformed
         Archivos k=new Archivos();
+        
+        
         if(horaE.getText().equals("")){
             jTextArea1.setText("Error,campos requeridos vacios");
         }else if(minE.getText().equals("")){
@@ -165,11 +167,22 @@ public class EstablecerH extends javax.swing.JFrame {
         }else if(minS.getText().equals("")){
             jTextArea1.setText("Error,campos requeridos vacios");           
         }else{
+      
             try{
             int horaEntrada=Integer.parseInt(horaE.getText());
             int minEntrada=Integer.parseInt(minE.getText());
             int horaSalida=Integer.parseInt(horaS.getText());
             int minSalida=Integer.parseInt(minS.getText());
+            if(horaEntrada>24){
+                jTextArea1.setText("Error,campos fuera de rango");
+            
+            }else if(horaSalida>24){
+                jTextArea1.setText("Error,campos fuera de rango");
+            }else if(minEntrada>60){
+                jTextArea1.setText("Error,campos fuera de rango");
+            }else if(minSalida>60){
+                jTextArea1.setText("Error,campos fuera de rango");
+            }else{
             Administrador.establecerHoraEntrada(horaEntrada, minEntrada);
             Administrador.establecerHoraSalida(horaSalida, minSalida);
             
@@ -179,6 +192,7 @@ public class EstablecerH extends javax.swing.JFrame {
             n.setLocationRelativeTo(null);
             n.setVisible(true);
             this.dispose();
+            }
             }catch(NumberFormatException e){
                 jTextArea1.setText("Error, ingrese solo numeros validos");
             }
