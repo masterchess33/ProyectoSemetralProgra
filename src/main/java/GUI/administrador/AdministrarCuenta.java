@@ -38,6 +38,7 @@ public class AdministrarCuenta extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         atras = new javax.swing.JButton();
+        ver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,45 +75,50 @@ public class AdministrarCuenta extends javax.swing.JFrame {
             }
         });
 
+        ver.setText("Ver empleados");
+        ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(atras)))
-                        .addContainerGap())
+                        .addComponent(ver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(atras))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
+                                .addGap(135, 135, 135)
                                 .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
+                                .addGap(75, 75, 75)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(cNombre)
-                                            .addComponent(cContra))
-                                        .addGap(19, 19, 19))
+                                        .addComponent(jLabel1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cNombre)
+                                    .addComponent(cContra)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                                             .addComponent(jTextField3))))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +143,9 @@ public class AdministrarCuenta extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(atras)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(atras)
+                            .addComponent(ver))
                         .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -153,6 +161,8 @@ public class AdministrarCuenta extends javax.swing.JFrame {
         }else{
             try{
             Coleccion.getTrab().get(numero).setNombreCuenta(nombre);
+            Archivos k=new Archivos();
+                k.guardarE();
             jTextArea2.setText("Cambio realizado con exito");
             }catch(IndexOutOfBoundsException e){
             jTextArea2.setText("No hay trabajadores que se puedan modificar");
@@ -168,6 +178,8 @@ public class AdministrarCuenta extends javax.swing.JFrame {
         }else{
             try{
             Coleccion.getTrab().get(numero).setContrasenia(contrasenia);
+            Archivos k=new Archivos();
+                k.guardarE();
             jTextArea2.setText("Cambio realizado con exito");
             }catch(IndexOutOfBoundsException e){
             jTextArea2.setText("No hay trabajadores que se puedan modificar");
@@ -181,6 +193,12 @@ public class AdministrarCuenta extends javax.swing.JFrame {
         n.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
+
+    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+        Archivos k=new Archivos();
+                k.leerE();
+                jTextArea1.setText(Coleccion.mostrarEmpleados());
+    }//GEN-LAST:event_verActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,9 +230,7 @@ public class AdministrarCuenta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Archivos k=new Archivos();
-                k.leerE();
-                jTextArea1.setText(Coleccion.mostrarEmpleados());
+                
                 jTextField2.setText("");
                 jTextField3.setText("");
                 new AdministrarCuenta().setVisible(true);
@@ -235,5 +251,6 @@ public class AdministrarCuenta extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton ver;
     // End of variables declaration//GEN-END:variables
 }
