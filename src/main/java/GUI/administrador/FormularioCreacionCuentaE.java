@@ -137,7 +137,7 @@ public class FormularioCreacionCuentaE extends javax.swing.JFrame {
             Trabajador n=new Trabajador(nombre, contra);
             Coleccion.agregarEmpleado(n);
             k.guardarE();
-            InicioAdministrador j=new InicioAdministrador();
+            MenuAdministrador j=new MenuAdministrador();
             j.setLocationRelativeTo(null);
             j.setVisible(true);
             this.dispose();
